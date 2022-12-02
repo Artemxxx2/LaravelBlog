@@ -19,7 +19,7 @@
             </a>
         </li>
     <li class="nav-item">
-        <a href="gallery.html" class="nav-link active">
+        <a href={{route('categoty.index')}} class="nav-link active">
             <i class="nav-icon far fa-image"></i>
             <p>
                 Категория

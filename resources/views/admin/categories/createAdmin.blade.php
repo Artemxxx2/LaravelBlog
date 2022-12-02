@@ -21,7 +21,16 @@
 
     <!-- Main content -->
     <section class="content">
-       <a href={{route('create.index')}}><button type="button" class="btn btn-block btn-info btn-lg">Добавить Категорию</button></a>
+      <form action={{route('store.index')}} method="POST" class="w-25">
+        @csrf
+        <div class="card-footer">
+            <div class="form-group">
+                <label>Категория</label>
+                <input class="form-control" name="title" placeholder="Введите название категории">
+              </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+          </div>
+      </form>
     </section>
     <!-- /.content -->
   </div>

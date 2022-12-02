@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +24,8 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin'],fu
     });
     Route::group(['namespace'=>'Categories' , 'prefix'=>'categories'],function(){
         Route::get('/','IndexController')->name('categoty.index');
+        Route::get('/create','CreateController')->name('create.index');
+        Route::post('/store','StoreController')->name('store.index');
      });
 });
 Auth::routes();
