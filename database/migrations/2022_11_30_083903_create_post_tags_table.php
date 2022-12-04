@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('post_tags', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('post_id');
-            $table->string('tag_id');
+            $table->unsignedBigInteger('post_id');
+            $table->unsignedBigInteger('tag_id');
             $table->timestamps();
 
             $table->index('post_id','post_tags_post_idx');

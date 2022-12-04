@@ -36,32 +36,16 @@
                 <th>title</th>
                 <th>created_at</th>
                 <th>updated_at</th>
-                <th>show</th>
-                <th>edit</th>
-                <th>delete</th>
               </tr>
             </thead>
-            @foreach ($categories as $item)
             <tbody>
               <tr>
-                <td>{{$item->id}}</td>
-                <td>{{$item->title}}</td>
-                <td>{{$item->created_at}}</td>
-                <td>{{$item->updated_at}}</td>
-                <td><a href={{route('category.show',$item->id)}}><i class="fa fa-eye" aria-hidden="true"></a></i></td>
-                <td><a href={{route('category.edit',$item->id)}}><i class="fas fa-pencil-alt"></i></a></td>
-                <td>
-                    <form action={{route('category.destroy',$item->id)}} method="post">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit">
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                    </button>
-                    </form>
-                </td>
+                <td>{{$category->id}}</td>
+                <td>{{$category->title}}</td>
+                <td>{{$category->created_at}}</td>
+                <td>{{$category->updated_at}}</span></td>
               </tr>
             </tbody>
-            @endforeach
           </table>
         </div>
         <!-- /.card-body -->

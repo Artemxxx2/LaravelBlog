@@ -1,10 +1,5 @@
 @extends('admin.layouts.main')
 @section('contentAdmin')
-@if (session()->has('message'))
-<div class="">
-      {{ session('message') }}
-  </div>
-@endif
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -26,19 +21,22 @@
 
     <!-- Main content -->
     <section class="content">
-      <form action={{route('store.index')}} method="POST" class="w-25">
-        @csrf
-        <div class="card-footer">
-            <div class="form-group">
-                <label>Категория</label>
-                <input class="form-control" name="title" placeholder="Введите название категории">
-              </div>
-            <button type="submit" class="btn btn-primary">Отправить</button>
-          </div>
-          @error('title')
-            <div class="text-danger">{{$message}}</div>
-          @enderror
-      </form>
+       <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Редактирование выбранной категории</h3>
+
+
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0" style="height: 300px;">
+            <form action={{route('category.update',$category->id)}} method="post">
+                @csrf
+                @method('PATCH')
+                <input value={{$category->title}} type="text" name="title">
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+        <!-- /.card-body -->
+      </div>
     </section>
     <!-- /.content -->
   </div>
