@@ -9,15 +9,15 @@
     <div class="sidebar">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-header">EXAMPLES</li>
-            <li class="nav-item">
-                <a href="calendar.html" class="nav-link active">
-                <i class="nav-icon far fa-calendar-alt"></i>
-                <p>
-                    Календарь
-                    <span class="badge badge-info right">2</span>
-                </p>
+        <li class="nav-item">
+            <a href="calendar.html" class="nav-link active">
+            <i class="nav-icon far fa-calendar-alt"></i>
+            <p>
+                Календарь
+                <span class="badge badge-info right">2</span>
+            </p>
             </a>
-        </li>
+    </li>
     <li class="nav-item">
         <a href={{route('categoty.index')}} class="nav-link active">
             <i class="nav-icon far fa-image"></i>
@@ -26,6 +26,15 @@
             </p>
         </a>
     </li>
+    <li class="nav-item">
+        <a href={{route('tags.index')}} class="nav-link active">
+            <i class="fa-solid fa-hashtag"></i>
+        <p>
+            Тэги
+            <span class="badge badge-info right">2</span>
+        </p>
+    </a>
+</li>
     </ul>
     <!-- /.sidebar -->
 </aside>
