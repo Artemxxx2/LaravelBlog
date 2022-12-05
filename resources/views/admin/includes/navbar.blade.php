@@ -44,6 +44,15 @@
     </p>
 </a>
 </li>
+<li class="nav-item">
+    <a href={{route('users.index')}} class="nav-link active">
+        <i class="fa-solid fa-hashtag"></i>
+    <p>
+        Пользователи
+        <span class="badge badge-info right">2</span>
+    </p>
+</a>
+</li>
     </ul>
     <!-- /.sidebar -->
 </aside>
