@@ -30,10 +30,19 @@
         <a href={{route('tags.index')}} class="nav-link active">
             <i class="fa-solid fa-hashtag"></i>
         <p>
-            Тэги
+            Теги
             <span class="badge badge-info right">2</span>
         </p>
     </a>
+</li>
+<li class="nav-item">
+    <a href={{route('posts.index')}} class="nav-link active">
+        <i class="fa-solid fa-hashtag"></i>
+    <p>
+        Посты
+        <span class="badge badge-info right">2</span>
+    </p>
+</a>
 </li>
     </ul>
     <!-- /.sidebar -->

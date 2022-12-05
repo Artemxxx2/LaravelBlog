@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
@@ -27,44 +27,44 @@
   <link rel="stylesheet" href={{asset("plugins/summernote/summernote-bs4.min.css")}}>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+    <div class="wrapper">
 
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src={{asset("dist/img/AdminLTELogo.png")}} alt="AdminLTELogo" height="60" width="60">
-  </div>
+        <!-- Preloader -->
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__shake" src={{asset("dist/img/AdminLTELogo.png")}} alt="AdminLTELogo" height="60" width="60">
+        </div>
 
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-      <!-- Left navbar links -->
-      <ul class="navbar-nav">
-          <li class="nav-item">
-              <a class="nav-link" data-widget="pushmenu" href={{asset("#")}} role="button"><i class="fas fa-bars"></i></a>
-            </li>
-        </ul>
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href={{asset("#")}} role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
 
-        <!-- Right navbar links -->
-        <ul class="navbar-nav ml-auto">
-        </ul>
-    </nav>
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+            </ul>
+        </nav>
 
-    @include('admin.includes.navbar')
+        @include('admin.includes.navbar')
 
-  <!-- Content Wrapper. Contains page content -->
-  @yield('contentAdmin')
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href={{asset("https://adminlte.io")}}>AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
-    </div>
-  </footer>
+        <!-- Content Wrapper. Contains page content -->
+        @yield('contentAdmin')
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2014-2021 <a href={{asset("https://adminlte.io")}}>AdminLTE.io</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 3.2.0
+            </div>
+        </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 
@@ -74,11 +74,12 @@
 <script src={{asset("plugins/jquery-ui/jquery-ui.min.js")}}></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-  $.widget.bridge('uibutton', $.ui.button)
+    $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
 <script src={{asset("plugins/bootstrap/js/bootstrap.bundle.min.js")}}></script>
 <!-- ChartJS -->
+<script src={{asset("plugins/bs-custom-file-input/bs-custom-file-input.min.js")}}></script>
 <script src={{asset("plugins/chart.js/Chart.min.js")}}></script>
 <!-- Sparkline -->
 <script src={{asset("plugins/sparklines/sparkline.js")}}></script>
@@ -102,5 +103,28 @@
 <script src={{asset("dist/js/demo.js")}}></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src={{asset("dist/js/pages/dashboard.js")}}></script>
+<script>
+$(document).ready(function() {
+  $('#summernote').summernote(
+    {
+        placeholder: 'Введите ваш текст',
+        tabsize: 2,
+        height: 400,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link']],
+          ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+      }
+  );
+});
+$(function () {
+  bsCustomFileInput.init();
+});
+</script>
 </body>
 </html>
