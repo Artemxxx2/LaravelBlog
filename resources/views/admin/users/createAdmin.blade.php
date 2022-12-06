@@ -36,6 +36,12 @@
                 <input class="form-control" name="email" placeholder="Введите email">
                 <label>Пароль</label>
                 <input class="form-control" name="password" placeholder="Введите пароль">
+                <select name="role" class="form-select form-select-lg mb-3 block" aria-label=".form-select-lg example">
+                    <option selected>Выберите роль</option>
+                    @foreach ($roles as $id=>$role)
+                    <option value={{$id}}>{{$role}}</option>
+                    @endforeach
+                  </select>
               </div>
             <button type="submit" class="btn btn-primary">Отправить</button>
           </div>

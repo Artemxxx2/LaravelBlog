@@ -12,6 +12,7 @@ class UsersStoreController extends BaseController
     {
         $data = $request->validated();
         $data['password'] = Hash::make($data['password']);
+        $data['role'] = (int)$data['role'];
         User::firstOrCreate(['email' => $data['email']],$data);
         return redirect()->route('users.index');
     }

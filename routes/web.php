@@ -14,12 +14,14 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::group(['namespace' => 'App\Http\Controllers\Post'],function()
 {
     Route::get('/', 'IndexController')->name('index');
 }
 );
-Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin'],function(){
+
+Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin','middleware'=>['auth','adminPermission']],function(){
     Route::group(['namespace'=>'Main'],function(){
        Route::get('/','IndexController');
     });
