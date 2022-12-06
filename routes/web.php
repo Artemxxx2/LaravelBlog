@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['namespace' => 'App\Http\Controllers\Post'],function()
 {
     Route::get('/', 'IndexController')->name('index');
@@ -64,4 +65,3 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin'],fu
      });
 });
 Auth::routes();
-
