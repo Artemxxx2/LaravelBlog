@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers\Admin\Posts;
 
-use App\Http\Controllers\Controller;
-use App\Models\Post;
-
-class PostsIndexController extends Controller
+class PostsIndexController extends BaseController
 {
     public function __invoke()
     {
-        $posts = Post::all();
+        $posts = $this->service->index();
         return view('admin.posts.index',compact('posts'));
     }
 }

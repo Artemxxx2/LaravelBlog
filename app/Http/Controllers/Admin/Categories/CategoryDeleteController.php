@@ -1,15 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Categories;
-
-use App\Http\Controllers\Controller;
 use App\Models\Category;
 
-class CategoryDeleteController extends Controller
+class CategoryDeleteController extends BaseController
 {
     public function __invoke(Category $category)
     {
-       $category->delete();
+       $this->service->delete($category);
        return redirect()->route('categoty.index');
     }
 }

@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin\Posts;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\Users\BaseController;
 use App\Http\Requests\Admin\Posts\UpdateRequest;
 use App\Models\Post;
 
-class PostsUpdateController extends Controller
+class PostsUpdateController extends BaseController
 {
     public function __invoke(Post $post,UpdateRequest $request)
     {
         $data = $request->validated();
-        $post->update($data);
+        $this->service->update($post,$data);
         return redirect()->route('posts.index');
     }
 }

@@ -21,7 +21,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Post'],function()
 }
 );
 
-Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin','middleware'=>['auth','adminPermission']],function(){
+Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin','middleware'=>['verified','auth','adminPermission']],function(){
     Route::group(['namespace'=>'Main'],function(){
        Route::get('/','IndexController');
     });
@@ -66,4 +66,4 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin','mi
         Route::delete('/{user}','UsersDeleteController')->name('users.destroy');
      });
 });
-Auth::routes();
+Auth::routes(['verify' => true]);

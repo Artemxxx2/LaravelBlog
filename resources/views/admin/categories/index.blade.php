@@ -1,5 +1,9 @@
 @extends('admin.layouts.main')
 @section('contentAdmin')
+<script src={{asset('/scripts/flashMessageDissapear.js')}} defer></script>
+@if (session('flash_message'))
+    <div class="alert alert-success text-center">{{session('flash_message')}}</div>
+@endif
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">

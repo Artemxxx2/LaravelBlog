@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Admin\Posts;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\Users\BaseController;
 use App\Models\Post;
 
-class PostsDeleteController extends Controller
+class PostsDeleteController extends BaseController
 {
     public function __invoke(Post $post)
     {
-       $post->delete();
+       $this->service->delete($post);
        return redirect()->route('posts.index');
     }
 }
