@@ -1,5 +1,15 @@
 @extends('admin.layouts.main')
 @section('contentAdmin')
+<script src={{asset('/scripts/flashMessageDissapear.js')}} defer></script>
+@if (session('flash_message'))
+    <div class="alert alert-success text-center">{{session('flash_message')}}</div>
+@endif
+@if (session('FLASH_UPDATED'))
+    <div class="alert alert-success text-center">{{session('FLASH_UPDATED')}}</div>
+@endif
+@if (session('FLASH_DELETED'))
+    <div class="alert alert-success text-center">{{session('FLASH_DELETED')}}</div>
+@endif
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -54,7 +64,7 @@
                     <form action={{route('users.destroy',$item->id)}} method="post">
                     @csrf
                     @method('DELETE')
-                    <button type="submit">
+                    <button class="btn btn-light text-danger" type="submit">
                     <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
                     </form>

@@ -10,7 +10,6 @@ class PostsStoreController extends BaseController
     {
         $data = $request->validated();
         $this->service->store($data);
-        // session()->flash('message', 'Post successfully updated.');
-        return redirect()->route('posts.create.index');
+        return redirect()->route('posts.index')->with('flash_message', 'Post was created');
     }
 }

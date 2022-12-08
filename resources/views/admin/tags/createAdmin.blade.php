@@ -1,10 +1,5 @@
 @extends('admin.layouts.main')
 @section('contentAdmin')
-@if (session()->has('message'))
-<div class="">
-      {{ session('message') }}
-  </div>
-@endif
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -30,8 +25,8 @@
         @csrf
         <div class="card-footer">
             <div class="form-group">
-                <label>Тэг</label>
-                <input class="form-control" name="title" placeholder="Введите название тэга">
+                <label>Тег</label>
+                <input class="form-control" name="title" placeholder="Введите название тега">
               </div>
             <button type="submit" class="btn btn-primary">Отправить</button>
           </div>

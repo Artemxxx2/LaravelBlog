@@ -1,5 +1,15 @@
 @extends('layouts.app')
 @section('main')
+<script src={{asset('/scripts/flashMessageDissapear.js')}} defer></script>
+@if (session('flash_message'))
+    <div class="alert alert-success text-center">{{session('flash_message')}}</div>
+@endif
+@if (session('FLASH_UPDATED'))
+    <div class="alert alert-success text-center">{{session('FLASH_UPDATED')}}</div>
+@endif
+@if (session('FLASH_DELETED'))
+    <div class="alert alert-success text-center">{{session('FLASH_DELETED')}}</div>
+@endif
 <main class="blog">
     <div class="container">
         <h1 class="edica-page-title" data-aos="fade-up">Blog</h1>

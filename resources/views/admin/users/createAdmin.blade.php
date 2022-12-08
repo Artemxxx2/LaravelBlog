@@ -1,10 +1,5 @@
 @extends('admin.layouts.main')
 @section('contentAdmin')
-@if (session()->has('message'))
-<div class="">
-      {{ session('message') }}
-  </div>
-@endif
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -37,7 +32,6 @@
                 <label>Пароль</label>
                 <input class="form-control" name="password" placeholder="Введите пароль">
                 <select name="role" class="form-select form-select-lg mb-3 block" aria-label=".form-select-lg example">
-                    <option selected>Выберите роль</option>
                     @foreach ($roles as $id=>$role)
                     <option value={{$id}}>{{$role}}</option>
                     @endforeach

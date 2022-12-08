@@ -44,6 +44,10 @@
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
+                <form action={{route('logout')}} method="POST">
+                @csrf
+                <button type="submit">Выйти</button>
+                </form>
             </ul>
         </nav>
 

@@ -1,5 +1,15 @@
 @extends('admin.layouts.main')
 @section('contentAdmin')
+<script src={{asset('/scripts/flashMessageDissapear.js')}} defer></script>
+@if (session('flash_message'))
+    <div class="alert alert-success text-center">{{session('flash_message')}}</div>
+@endif
+@if (session('FLASH_UPDATED'))
+    <div class="alert alert-success text-center">{{session('FLASH_UPDATED')}}</div>
+@endif
+@if (session('FLASH_DELETED'))
+    <div class="alert alert-success text-center">{{session('FLASH_DELETED')}}</div>
+@endif
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -21,10 +31,10 @@
 
     <!-- Main content -->
     <section class="content">
-       <a href={{route('tags.create.index')}}><button type="button" class="btn btn-block btn-info btn-lg">Добавить Тэг</button></a>
+       <a href={{route('tags.create.index')}}><button type="button" class="btn btn-block btn-info btn-lg">Добавить Тег</button></a>
        <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Список Тэгов</h3>
+          <h3 class="card-title">Список Тегов</h3>
 
 
         <!-- /.card-header -->
@@ -54,7 +64,7 @@
                     <form action={{route('tags.destroy',$item->id)}} method="post">
                     @csrf
                     @method('DELETE')
-                    <button type="submit">
+                    <button class="btn btn-light text-danger" type="submit">
                     <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
                     </form>

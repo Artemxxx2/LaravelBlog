@@ -13,6 +13,6 @@ class TagsStoreController extends Controller
         $data = $request->validated();
         Tag::firstOrCreate($data);
         session()->flash('message', 'Post successfully updated.');
-        return redirect()->route('tags.create.index');
+        return redirect()->route('tags.index')->with('flash_message','Tag was successfully added');
     }
 }

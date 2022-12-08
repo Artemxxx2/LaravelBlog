@@ -12,5 +12,6 @@ class CategoryUpdateController extends Controller
     {
         $data = $request->validated();
         $category->update($data);
+        return redirect()->route('categoty.index')->with('FLASH_UPDATED','Category was updated successfully');
     }
 }

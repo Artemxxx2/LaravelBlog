@@ -12,6 +12,6 @@ class UsersUpdateController extends Controller
     {
         $data = $request->validated();
         $user->update($data);
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('FLASH_UPDATED', 'User data was changed');
     }
 }

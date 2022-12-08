@@ -10,46 +10,45 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-header">EXAMPLES</li>
         <li class="nav-item">
-            <a href="calendar.html" class="nav-link active">
+            <a href="calendar.html" class="nav-link ">
             <i class="nav-icon far fa-calendar-alt"></i>
             <p>
                 Календарь
-                <span class="badge badge-info right">2</span>
+
             </p>
             </a>
     </li>
     <li class="nav-item">
-        <a href={{route('categoty.index')}} class="nav-link active">
-            <i class="nav-icon far fa-image"></i>
+        <a href={{route('categoty.index')}} class="nav-link ">
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
             <p>
                 Категория
             </p>
         </a>
     </li>
     <li class="nav-item">
-        <a href={{route('tags.index')}} class="nav-link active">
-            <i class="fa-solid fa-hashtag"></i>
+        <a href={{route('tags.index')}} class="nav-link ">
+            <i class="fas fa-tags"></i>
         <p>
             Теги
-            <span class="badge badge-info right">2</span>
+
         </p>
     </a>
 </li>
 <li class="nav-item">
-    <a href={{route('posts.index')}} class="nav-link active">
-        <i class="fa-solid fa-hashtag"></i>
+    <a href={{route('posts.index')}} class="nav-link ">
+        <i class="fa-regular fa-paste"></i>
     <p>
         Посты
-        <span class="badge badge-info right">2</span>
+
     </p>
 </a>
 </li>
 <li class="nav-item">
-    <a href={{route('users.index')}} class="nav-link active">
+    <a href={{route('users.index')}} class="nav-link ">
         <i class="fa-solid fa-hashtag"></i>
     <p>
         Пользователи
-        <span class="badge badge-info right">2</span>
     </p>
 </a>
 </li>

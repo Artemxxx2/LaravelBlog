@@ -21,10 +21,10 @@
 
     <!-- Main content -->
     <section class="content">
-       <a href={{route('tags.create.index')}}><button type="button" class="btn btn-block btn-info btn-lg">Добавить Тэги</button></a>
+       <a href={{route('tags.create.index')}}><button type="button" class="btn btn-block btn-info btn-lg">Добавить Теги</button></a>
        <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Список Тэгов</h3>
+          <h3 class="card-title">Список Тегов</h3>
 
 
         <!-- /.card-header -->

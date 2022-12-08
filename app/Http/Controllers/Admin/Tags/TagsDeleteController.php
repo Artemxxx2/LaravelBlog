@@ -10,6 +10,6 @@ class TagsDeleteController extends Controller
     public function __invoke(Tag $tag)
     {
        $tag->delete();
-       return redirect()->route('tags.index');
+       return redirect()->route('tags.index')->with('FLASH_DELETED','Tag was successfully deleted');
     }
 }

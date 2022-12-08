@@ -12,6 +12,6 @@ class TagsUpdateController extends Controller
     {
         $data = $request->validated();
         $tag->update($data);
-        return redirect()->route('tags.index');
+        return redirect()->route('tags.index')->with('FLASH_UPDATED','Tag was successfully updated');
     }
 }

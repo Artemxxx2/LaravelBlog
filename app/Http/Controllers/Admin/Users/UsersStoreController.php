@@ -19,6 +19,6 @@ class UsersStoreController extends BaseController
         Mail::to($data['email'])->send( new PasswordMail($password, $name));
         $data['role'] = (int)$data['role'];
         User::firstOrCreate(['email' => $data['email']],$data);
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('flash_message','User was created');
     }
 }

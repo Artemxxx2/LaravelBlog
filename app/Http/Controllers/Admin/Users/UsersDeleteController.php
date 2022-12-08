@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Admin\Users;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
+use App\Models\User;
 
 class UsersDeleteController extends Controller
 {
-    public function __invoke(Post $post)
+    public function __invoke(User $user)
     {
-       $post->delete();
-       return redirect()->route('posts.index');
+       $user->delete();
+       return redirect()->route('users.index')->with('FLASH_DELETED', 'User was deleted');
     }
 }
